@@ -58,13 +58,13 @@ SSH：22
 在 PVE SSH 中粘贴下面一行即可交互创建模板：选了系统后可以一路回车，其他在pve的web介面修改也是可以的
 
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/vbskycn/proxmox-templates/main/import-pve-template.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/ilaia/proxmox-templates/main/import-pve-template.sh)
 ```
 
 如果想完全非交互，也可以用环境变量指定参数：
 
 ```bash
-ASSUME_YES=true IMAGE_ID=ubuntu2604desktop VMID=9126 NAME=ubuntu-26.04-desktop-template bash <(wget -qO- https://raw.githubusercontent.com/vbskycn/proxmox-templates/main/import-pve-template.sh)
+ASSUME_YES=true IMAGE_ID=ubuntu2604desktop VMID=9126 NAME=ubuntu-26.04-desktop-template bash <(wget -qO- https://raw.githubusercontent.com/ilaia/proxmox-templates/main/import-pve-template.sh)
 ```
 
 固定 IP 示例：
@@ -75,7 +75,7 @@ VMID=9126 \
 IPCONFIG0='ip=192.168.1.226/24,gw=192.168.1.1' \
 NAMESERVER='223.5.5.5' \
 ASSUME_YES=true \
-bash <(wget -qO- https://raw.githubusercontent.com/vbskycn/proxmox-templates/main/import-pve-template.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/ilaia/proxmox-templates/main/import-pve-template.sh)
 ```
 
 可选的 `IMAGE_ID`：
@@ -109,7 +109,7 @@ pvesm status
 # -----------------------------
 
 # GitHub 仓库。
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 
 # 可选：如果想固定使用某个版本，就在这里填写 Release 标签。
 # 留空时会自动使用本仓库最新 Release。
@@ -222,7 +222,7 @@ qm template "${VMID}"
 ### Debian 13 模板
 
 ```bash
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 RELEASE_TAG="${RELEASE_TAG:-}"
 # RELEASE_TAG="pve-cloud-templates-2026.05.08"
 [ -n "${RELEASE_TAG}" ] || RELEASE_TAG="$(wget -qO- "https://api.github.com/repos/${REPO}/releases/latest" | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -n1)"
@@ -275,7 +275,7 @@ qm template "${VMID}"
 ### Ubuntu 22.04 模板
 
 ```bash
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 RELEASE_TAG="${RELEASE_TAG:-}"
 # RELEASE_TAG="pve-cloud-templates-2026.05.08"
 [ -n "${RELEASE_TAG}" ] || RELEASE_TAG="$(wget -qO- "https://api.github.com/repos/${REPO}/releases/latest" | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -n1)"
@@ -328,7 +328,7 @@ qm template "${VMID}"
 ### Ubuntu 24.04 模板
 
 ```bash
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 RELEASE_TAG="${RELEASE_TAG:-}"
 # RELEASE_TAG="pve-cloud-templates-2026.05.08"
 [ -n "${RELEASE_TAG}" ] || RELEASE_TAG="$(wget -qO- "https://api.github.com/repos/${REPO}/releases/latest" | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -n1)"
@@ -381,7 +381,7 @@ qm template "${VMID}"
 ### Ubuntu 26.04 模板
 
 ```bash
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 RELEASE_TAG="${RELEASE_TAG:-}"
 # RELEASE_TAG="pve-cloud-templates-2026.05.08"
 [ -n "${RELEASE_TAG}" ] || RELEASE_TAG="$(wget -qO- "https://api.github.com/repos/${REPO}/releases/latest" | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -n1)"
@@ -434,7 +434,7 @@ qm template "${VMID}"
 ### Ubuntu 26.04 桌面版模板
 
 ```bash
-REPO="vbskycn/proxmox-templates"
+REPO="ilaia/proxmox-templates"
 RELEASE_TAG="${RELEASE_TAG:-}"
 # RELEASE_TAG="pve-cloud-templates-2026.05.08"
 [ -n "${RELEASE_TAG}" ] || RELEASE_TAG="$(wget -qO- "https://api.github.com/repos/${REPO}/releases/latest" | sed -n 's/.*"tag_name": *"\([^"]*\)".*/\1/p' | head -n1)"
