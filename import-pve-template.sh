@@ -6,7 +6,7 @@
 # 自动校验 SHA256、导入磁盘并创建 Cloud-init 模板。
 #
 # 最短用法：
-#   bash <(wget -qO- https://raw.githubusercontent.com/vbskycn/proxmox-templates/main/import-pve-template.sh)
+#   bash <(wget -qO- https://raw.githubusercontent.com/ilaia/proxmox-templates/main/import-pve-template.sh)
 #
 # 常用非交互用法：
 #   IMAGE_ID=ubuntu2604desktop VMID=9126 bash import-pve-template.sh
@@ -14,7 +14,7 @@
 
 set -euo pipefail
 
-REPO="${REPO:-vbskycn/proxmox-templates}"
+REPO="${REPO:-ilaia/proxmox-templates}"
 RELEASE_TAG="${RELEASE_TAG:-}"
 IMAGE_DIR="${IMAGE_DIR:-/root/cloud-image}"
 ROOT_PASSWORD="${ROOT_PASSWORD:-password}"
